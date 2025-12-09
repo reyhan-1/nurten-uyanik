@@ -1,5 +1,7 @@
 // src/app/page.tsx
 import { Hero } from "@/app/components/Hero";
+import { Faq } from "@/app/components/Faq";
+import { HamurlarSection} from "@/app/components/Hamurlar"
 
 const favoriteProducts = [
   {
@@ -80,28 +82,32 @@ export default function HomePage() {
             </article>
           ))}
         </div>
+      </section>
 
-        {/* INSTAGRAM BÖLÜMÜ */}
-        <div className="mt-10 border-t border-neutral-200 pt-6 text-sm">
-          <p className="text-xs uppercase tracking-[0.25em] text-neutral-500">
-            INSTAGRAM
-          </p>
+      <HamurlarSection/>
+      {/* SSS – Soğuk Porselen */}
+      <Faq />
 
-          <h3 className="mt-1 text-base font-semibold">@nurten_handmade</h3>
+      {/* INSTAGRAM BÖLÜMÜ */}
+      <section className="mx-auto mt-10 max-w-6xl px-4 border-t border-neutral-200 pt-6 text-sm">
+        <p className="text-xs uppercase tracking-[0.25em] text-neutral-500">
+          INSTAGRAM
+        </p>
 
-          <p className="mt-2 max-w-xl text-sm text-neutral-700">
-            Soğuk Porselen & Clay Art 🍎 • minik mutluluklar, evde terapi gibi
-            bir hobi. Takip et, beraber üretelim 💌
-          </p>
+        <h3 className="mt-1 text-base font-semibold">@nurten_handmade</h3>
 
-          <a
-            href="https://www.instagram.com/nurten_handmade"
-            target="_blank"
-            className="mt-3 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-neutral-800 underline-offset-4 hover:underline"
-          >
-            INSTAGRAM’DA GÖR
-          </a>
-        </div>
+        <p className="mt-2 max-w-xl text-sm text-neutral-700">
+          Soğuk Porselen & Clay Art 🍎 • minik mutluluklar, evde terapi gibi
+          bir hobi. Takip et, beraber üretelim 💌
+        </p>
+
+        <a
+          href="https://www.instagram.com/nurten_handmade"
+          target="_blank"
+          className="mt-3 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-neutral-800 underline-offset-4 hover:underline"
+        >
+          INSTAGRAM’DA GÖR
+        </a>
       </section>
     </div>
   );
