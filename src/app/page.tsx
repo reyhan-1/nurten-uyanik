@@ -1,65 +1,108 @@
-import Image from "next/image";
+// src/app/page.tsx
+import { Hero } from "@/app/components/Hero";
 
-export default function Home() {
+const favoriteProducts = [
+  {
+    name: "El Yapımı Kırmızı Elma Obje",
+    description: "Soğuk porselenden elde şekillendirilmiş dekoratif elma.",
+    tag: "Dekoratif Obje",
+    price: "₺450",
+  },
+  {
+    name: "Çiçekli Mini Vazo Seti",
+    description: "Esnek porselenden pastel tonlarda 3 mini vazo.",
+    tag: "Clay Art",
+    price: "₺620",
+  },
+  {
+    name: "Online Ders: Soğuk Porselen Hamur Yapımı",
+    description: "Hamur tarifleri, püf noktaları ve saklama önerileri.",
+    tag: "Online Ders",
+    price: "₺349",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <div className="bg-[#f8f1e7]">
+      {/* Hero */}
+      <Hero />
+
+      {/* FAVORİLERİMİZ */}
+      <section className="mx-auto mt-10 max-w-6xl px-4">
+        {/* Başlık + TÜMÜNÜ GÖR */}
+        <div className="mb-4 flex items-baseline justify-between">
+          <h2 className="text-xl font-semibold tracking-tight">
+            FAVORİLERİMİZ
+          </h2>
+
+          <a
+            href="/store"
+            className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-700 hover:underline"
+          >
+            TÜMÜNÜ GÖR
+          </a>
+        </div>
+
+        {/* Ürün Grid */}
+        <div className="grid gap-6 md:grid-cols-3">
+          {favoriteProducts.map((item) => (
+            <article
+              key={item.name}
+              className="flex flex-col border border-neutral-200 bg-[#fdf5ea] shadow-sm"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              {/* Ürün görsel placeholder (gerçek resim ekleyince değiştireceğiz) */}
+              <div className="h-52 bg-neutral-300/40" />
+
+              <div className="flex flex-1 flex-col justify-between p-4 text-sm">
+                <div className="space-y-2">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500">
+                    {item.tag}
+                  </p>
+
+                  <h3 className="text-sm font-semibold tracking-tight">
+                    {item.name}
+                  </h3>
+
+                  <p className="text-xs text-neutral-700">
+                    {item.description}
+                  </p>
+                </div>
+
+                <div className="mt-4 flex items-center justify-between">
+                  <span className="text-sm font-semibold">{item.price}</span>
+
+                  <button className="border border-neutral-900 px-4 py-1 text-xs font-semibold uppercase tracking-[0.15em] hover:bg-neutral-900 hover:text-[#f8f1e7]">
+                    Sepete ekle
+                  </button>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {/* INSTAGRAM BÖLÜMÜ */}
+        <div className="mt-10 border-t border-neutral-200 pt-6 text-sm">
+          <p className="text-xs uppercase tracking-[0.25em] text-neutral-500">
+            INSTAGRAM
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+
+          <h3 className="mt-1 text-base font-semibold">@nurten_handmade</h3>
+
+          <p className="mt-2 max-w-xl text-sm text-neutral-700">
+            Soğuk Porselen & Clay Art 🍎 • minik mutluluklar, evde terapi gibi
+            bir hobi. Takip et, beraber üretelim 💌
+          </p>
+
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://www.instagram.com/nurten_handmade"
             target="_blank"
-            rel="noopener noreferrer"
+            className="mt-3 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-neutral-800 underline-offset-4 hover:underline"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
+            INSTAGRAM’DA GÖR
           </a>
         </div>
-      </main>
+      </section>
     </div>
   );
 }
