@@ -36,7 +36,7 @@ export function Hero() {
       <div className="bg-[#a52b25] text-center text-xs font-medium text-[#fdf5ea]">
         <div className="mx-auto flex max-w-6xl items-center justify-center px-4 py-2">
           <span className="mr-1">
-            Yeni: Online soğuk porselen dersleri açıldı.
+            Instagram'da çok sevilen online dersler — soğuk porselen ve daha fazlası...
           </span>
           <a
             href="/courses"
@@ -60,20 +60,20 @@ export function Hero() {
           {/* Metin */}
           <div className="relative flex h-full flex-col items-center justify-center px-4 text-center text-white">
             <h1 className="hero-heading text-3xl font-semibold tracking-wide sm:text-4xl md:text-5xl">
-              SOĞUK PORSELEN &amp; CLAY ART
+              Üretmenin Mutluluğu
             </h1>
             <p className="mt-3 max-w-xl text-sm text-neutral-200 sm:text-base">
-              Esnek porselen hamurundan{" "}
-              <strong>dekoratif objeler</strong> ve{" "}
-              <strong>online dersler</strong>. Evde terapi gibi bir hobi,
-              minik mutluluklar.
+              Nurten Handmade eğitimleri ile dekoratif objeler yapmayı öğrenin.<br/>{" "}
+              <strong>Ankara atölye eğitimleri</strong>
+              ,{" "}<strong>online dersler</strong>{" "}
+              ve <strong>günlük workshoplar</strong>la kendinize zaman ayırın, yaratıcı bir yolculuğa çıkın.
             </p>
             <div className="hero-button mt-6">
               <a
-                href="/store"
+                href="/egitimler"
                 className="bg-white px-6 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-black"
               >
-                ŞİMDİ KEŞFET
+                Eğitimleri İnceleyin
               </a>
             </div>
           </div>

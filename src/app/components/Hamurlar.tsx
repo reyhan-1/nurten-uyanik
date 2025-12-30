@@ -55,7 +55,9 @@ export function HamurlarSection() {
 
         <a
           href="/courses"
-          className="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-neutral-800 underline-offset-4 hover:underline"
+          className=" items-center hover:underline
+            gap-10 text-neutral-800 uppercase
+            tracking-[0.25em] text-[12px] leading-relaxed"
         >
           ONLINE DERSLERİ GÖR
         </a>

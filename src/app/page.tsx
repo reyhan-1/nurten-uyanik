@@ -2,6 +2,7 @@
 import { Hero } from "@/app/components/Hero";
 import { Faq } from "@/app/components/Faq";
 import { HamurlarSection} from "@/app/components/Hamurlar"
+import {Footer} from "@/app/components/Footer";
 
 const favoriteProducts = [
   {
@@ -34,13 +35,15 @@ export default function HomePage() {
       <section className="mx-auto mt-10 max-w-6xl px-4">
         {/* Başlık + TÜMÜNÜ GÖR */}
         <div className="mb-4 flex items-baseline justify-between">
-          <h2 className="text-xl font-semibold tracking-tight">
-            FAVORİLERİMİZ
+          <h2 className="text-xl uppercase font-semibold tracking-light">
+            nurten handmade tasarımı ÖZEL ÜRÜNLER
           </h2>
 
           <a
             href="/store"
-            className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-700 hover:underline"
+            className="flex items-center hover:underline
+            gap-10 text-neutral-800 uppercase
+            tracking-[0.25em] text-[12px] leading-relaxed"
           >
             TÜMÜNÜ GÖR
           </a>
