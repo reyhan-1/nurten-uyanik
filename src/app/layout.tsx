@@ -32,7 +32,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
         className={`${geistSans.variable} ${geistMono.variable} bg-[#f8f1e7] text-slate-900`}
       >
         <Navbar />
-        <main>{children}</main>
+        <div className="pt-23">
+  <main>{children}</main>
+</div>
       <Footer />
       </body>
     </html>

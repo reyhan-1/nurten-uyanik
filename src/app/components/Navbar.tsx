@@ -9,7 +9,8 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="border-b border-neutral-200 bg-[#f8f1e7]">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-neutral-200 bg-[#f8f1e7]">
+
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
         {/* Logo / Marka */}
         <Link href="/" className="flex items-center gap-2">

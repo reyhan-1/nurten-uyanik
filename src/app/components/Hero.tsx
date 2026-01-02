@@ -1,10 +1,47 @@
-// components/Hero.tsx
 "use client";
 
-import { useEffect, useRef } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-export function Hero() {
+type HeroProps = {
+  /** Red announcement bar at the top */
+  announcementText?: ReactNode;
+  announcementLinkLabel?: string;
+  announcementLinkHref?: string;
+
+  /** Main hero content */
+  title: ReactNode;
+  description?: ReactNode;
+
+  /** Primary CTA button */
+  primaryCtaLabel?: string;
+  primaryCtaHref?: string;
+
+  /** Layout & style options */
+  backgroundImageUrl?: string; // e.g. "/hero-placeholder.jpg"
+  heightClassName?: string; // e.g. "h-[420px]" or "h-[520px]"
+  align?: "center" | "left"; // text alignment + flex alignment
+  sectionClassName?: string; // extra classes for <section>
+  contentClassName?: string; // extra classes for inner content wrapper
+};
+
+export function Hero({
+  announcementText,
+  announcementLinkLabel,
+  announcementLinkHref,
+
+  title,
+  description,
+
+  primaryCtaLabel,
+  primaryCtaHref,
+
+  backgroundImageUrl = "/hero-placeholder.jpg",
+  heightClassName = "h-[420px]",
+  align = "center",
+  sectionClassName = "",
+  contentClassName = "",
+}: HeroProps) {
   const heroRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -30,52 +67,72 @@ export function Hero() {
     return () => ctx.revert();
   }, []);
 
-  return (
-    <section ref={heroRef}>
-      {/* Üst kırmızı duyuru bandı */}
-      <div className="bg-[#a52b25] text-center text-xs font-medium text-[#fdf5ea]">
-        <div className="mx-auto flex max-w-6xl items-center justify-center px-4 py-2">
-          <span className="mr-1">
-            Instagram'da çok sevilen online dersler — soğuk porselen ve daha fazlası...
-          </span>
-          <a
-            href="/courses"
-            className="underline underline-offset-2 hover:text-white"
-          >
-            Hemen incele
-          </a>
-        </div>
-      </div>
+  const isLeft = align === "left";
 
-      {/* Büyük hero (video/görsel alanı gibi) */}
+  return (
+    <section ref={heroRef} className={sectionClassName}>
+      {/* Announcement bar (optional) */}
+      {announcementText && (
+        <div className="bg-[#a52b25] text-center text-xs font-medium text-[#fdf5ea]">
+          <div className="mx-auto flex max-w-6xl items-center justify-center px-4 py-2">
+            <span className="mr-1">{announcementText}</span>
+
+            {announcementLinkLabel && announcementLinkHref && (
+              <a
+                href={announcementLinkHref}
+                className="underline underline-offset-2 hover:text-white"
+              >
+                {announcementLinkLabel}
+              </a>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Main hero block */}
       <div className="relative bg-black">
-        {/* Arkaplan: şimdilik koyu görsel yerine gradient,
-            istersen buraya Next Image ile gerçek foto/video ekleyebiliriz */}
-        <div className="relative mx-auto h-[420px] max-w-6xl overflow-hidden">
+        <div
+          className={`relative mx-auto max-w-6xl overflow-hidden ${heightClassName}`}
+        >
+          {/* Background: gradient + image */}
           <div className="absolute inset-0">
             <div className="h-full w-full bg-gradient-to-t from-black via-black/60 to-black/20" />
-            <div className="absolute inset-0 bg-[url('/hero-placeholder.jpg')] bg-cover bg-center opacity-50" />
+            {backgroundImageUrl && (
+              <div
+                className="absolute inset-0 bg-cover bg-center opacity-50"
+                style={{ backgroundImage: `url('${backgroundImageUrl}')` }}
+              />
+            )}
           </div>
 
-          {/* Metin */}
-          <div className="relative flex h-full flex-col items-center justify-center px-4 text-center text-white">
+          {/* Content */}
+          <div
+            className={`relative flex h-full flex-col justify-center px-4 text-white ${
+              isLeft
+                ? "items-start text-left"
+                : "items-center text-center"
+            } ${contentClassName}`}
+          >
             <h1 className="hero-heading text-3xl font-semibold tracking-wide sm:text-4xl md:text-5xl">
-              Üretmenin Mutluluğu
+              {title}
             </h1>
-            <p className="mt-3 max-w-xl text-sm text-neutral-200 sm:text-base">
-              Nurten Handmade eğitimleri ile dekoratif objeler yapmayı öğrenin.<br/>{" "}
-              <strong>Ankara atölye eğitimleri</strong>
-              ,{" "}<strong>online dersler</strong>{" "}
-              ve <strong>günlük workshoplar</strong>la kendinize zaman ayırın, yaratıcı bir yolculuğa çıkın.
-            </p>
-            <div className="hero-button mt-6">
-              <a
-                href="/egitimler"
-                className="bg-white px-6 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-black"
-              >
-                Eğitimleri İnceleyin
-              </a>
-            </div>
+
+            {description && (
+              <div className="mt-3 max-w-xl text-sm text-neutral-200 sm:text-base">
+                {description}
+              </div>
+            )}
+
+            {primaryCtaLabel && primaryCtaHref && (
+              <div className="hero-button mt-6">
+                <a
+                  href={primaryCtaHref}
+                  className="bg-white px-6 py-2 text-sm font-semibold uppercase tracking-[0.2em] text-black"
+                >
+                  {primaryCtaLabel}
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </div>

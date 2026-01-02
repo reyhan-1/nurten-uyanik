@@ -95,7 +95,7 @@ export function Footer() {
                 Sık Sorulan Sorular
               </Link>
 
-              <Link href="/mesaj" className="hover:opacity-60 transition">
+              <Link href="/iletisim" className="hover:opacity-60 transition">
                 Mesaj Formu
               </Link>
             </div>

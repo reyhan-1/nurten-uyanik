@@ -7,7 +7,7 @@ const doughs = [
   {
     id: "soguk-porselen",
     name: "Soğuk Porselen",
-    short: "İnce, zarif ve detaylı dekoratif objeler için.",
+    short: "Tüm dekoratif obje çalışmalarında kullanılır.",
     uses: "Çiçekler, minik objeler, zarif figürler ve hassas detaylar.",
     objectImage: "/hamurlar/soguk-porselen-obje.jpg",
     doughImage: "/hamurlar/soguk-porselen-hamur.jpg",
@@ -15,15 +15,15 @@ const doughs = [
   {
     id: "esnek-porselen",
     name: "Esnek Porselen",
-    short: "Daha esnek, kırılmaya dayanıklı projeler için.",
-    uses: "Kıvrımlı formda kalan yapraklar, hareketli figürler, ince ama sağlam parçalar.",
+    short: "Daha esnek, daha ince projeler için.",
+    uses: "Dallı çiçek formlarına uygundur,çok  ince ama sağlam çalışmalar için idealdir. Hızlı kurumaz",
     objectImage: "/hamurlar/esnek-porselen-obje.jpg",
     doughImage: "/hamurlar/esnek-porselen-hamur.jpg",
   },
   {
     id: "polypuff",
-    name: "Polypuff Hamuru",
-    short: "Kabaran, yumuşak dokulu ve hacimli efektler için.",
+    name: "Polypuff Kili",
+    short: "Fırınlanmayan seramik gibi görünmesi istenilen tüm çalışmalar için idealdir.",
     uses: "Pastel görünümler, pofuduk detaylar, çocuk odası süsleri ve fun projeler.",
     objectImage: "/hamurlar/polypuff-obje.jpg",
     doughImage: "/hamurlar/polypuff-hamur.jpg",
@@ -31,7 +31,7 @@ const doughs = [
   {
     id: "figur-hamuru",
     name: "Figür Hamuru",
-    short: "Yüz ifadesi ve vücut formu gibi figür çalışmalarına özel.",
+    short: "Yüz ifadesi ve vücut formu gibi figür çalışmalarına özel modelleme hamurudur.",
     uses: "Karakter figürler, bebekler, minyatür insanlar ve yüz çalışmaları.",
     objectImage: "/hamurlar/figur-hamuru-obje.jpg",
     doughImage: "/hamurlar/figur-hamuru-hamur.jpg",
@@ -47,19 +47,19 @@ export function HamurlarSection() {
             Hamurlarımız
           </h2>
           <p className="mt-2 max-w-2xl text-sm text-neutral-700">
-            Online derslerde dört farklı hamurla çalışıyoruz: soğuk porselen,
+            Eğitimlerimizde dört temel hamurla çalışıyoruz: soğuk porselen,
             esnek porselen, polypuff ve figür hamuru. Her biri farklı dekoratif
             objelerde, farklı etkiler için kullanılıyor.
           </p>
         </div>
 
         <a
-          href="/courses"
+          href="/egitimler"
           className=" items-center hover:underline
             gap-10 text-neutral-800 uppercase
             tracking-[0.25em] text-[12px] leading-relaxed"
         >
-          ONLINE DERSLERİ GÖR
+          EĞİTİMLERİ GÖR
         </a>
       </div>
 

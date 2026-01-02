@@ -1,8 +1,8 @@
 // src/app/page.tsx
 import { Hero } from "@/app/components/Hero";
 import { Faq } from "@/app/components/Faq";
-import { HamurlarSection} from "@/app/components/Hamurlar"
-import {Footer} from "@/app/components/Footer";
+import { HamurlarSection } from "@/app/components/Hamurlar";
+import { Footer } from "@/app/components/Footer";
 
 const favoriteProducts = [
   {
@@ -28,8 +28,33 @@ const favoriteProducts = [
 export default function HomePage() {
   return (
     <div className="bg-[#f8f1e7]">
-      {/* Hero */}
-      <Hero />
+      {/* Hero (reusable) */}
+      <Hero
+        announcementText={
+          <>
+            Instagram&apos;da çok sevilen online dersler — soğuk porselen ve
+            daha fazlası...
+          </>
+        }
+        announcementLinkLabel="Hemen incele"
+        announcementLinkHref="/courses"
+        title="Üretmenin Mutluluğu"
+        description={
+          <>
+            Nurten Handmade eğitimleri ile dekoratif objeler yapmayı öğrenin.
+            <br />
+            <strong>Ankara atölye eğitimleri</strong>,{" "}
+            <strong>online dersler</strong> ve{" "}
+            <strong>günlük workshoplar</strong>la kendinize zaman ayırın,
+            yaratıcı bir yolculuğa çıkın.
+          </>
+        }
+        primaryCtaLabel="Eğitimleri İnceleyin"
+        primaryCtaHref="/egitimler"
+        backgroundImageUrl="/hero-placeholder.jpg"
+        heightClassName="h-[420px]"
+        align="center"
+      />
 
       {/* FAVORİLERİMİZ */}
       <section className="mx-auto mt-10 max-w-6xl px-4">
@@ -87,7 +112,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <HamurlarSection/>
+      <HamurlarSection />
+
       {/* SSS – Soğuk Porselen */}
       <Faq />
 
@@ -100,7 +126,7 @@ export default function HomePage() {
         <h3 className="mt-1 text-base font-semibold">@nurten_handmade</h3>
 
         <p className="mt-2 max-w-xl text-sm text-neutral-700">
-          Soğuk Porselen & Clay Art 🍎 • minik mutluluklar, evde terapi gibi
+          Soğuk Porselen &amp; Clay Art 🍎 • minik mutluluklar, evde terapi gibi
           bir hobi. Takip et, beraber üretelim 💌
         </p>
 
